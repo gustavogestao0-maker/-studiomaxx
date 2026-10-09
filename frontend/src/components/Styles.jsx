@@ -33,9 +33,8 @@ export default function Styles() {
                   }}
                   aria-expanded={isOpenMobile}
                   data-testid={`style-row-${i}`}
-                  className="group flex w-full items-baseline gap-5 py-5 text-left md:gap-8 md:py-7"
+                  className="group flex w-full items-center gap-5 py-5 text-left md:gap-8 md:py-7"
                 >
-                  <span className="font-mono text-xs text-ember">{s.n} /</span>
                   <span
                     className={`font-display text-3xl uppercase leading-none transition-all duration-500 group-hover:translate-x-2 md:text-6xl ${
                       active === i ? "text-ember md:translate-x-2" : "text-bone"
@@ -97,7 +96,7 @@ export default function Styles() {
               />
             </AnimatePresence>
             <span className="tag absolute bottom-4 left-4 bg-ink/60 px-2 py-1 !text-bone/80">
-              {current.n} / {current.name} — IMAGEM DE REFERÊNCIA
+              {current.name} — IMAGEM DE REFERÊNCIA
             </span>
           </div>
         </div>
