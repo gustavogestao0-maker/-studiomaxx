@@ -1,0 +1,158 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --ink: #080808;
+    --graphite: #171717;
+    --bone: #f1eee8;
+    --ember: #ff5a1f;
+    --bronze: #a76d3c;
+    --ash: #888680;
+    --background: 0 0% 3%;
+    --foreground: 40 11% 93%;
+    --primary: 18 100% 56%;
+    --primary-foreground: 0 0% 3%;
+    --muted: 0 0% 9%;
+    --muted-foreground: 60 3% 52%;
+    --border: 0 0% 9%;
+    --input: 0 0% 9%;
+    --ring: 18 100% 56%;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-ink text-bone font-sans antialiased;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: var(--ember);
+    color: var(--ink);
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--ember);
+    outline-offset: 3px;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: var(--ink);
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--graphite);
+    border: 2px solid var(--ink);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--bronze);
+  }
+}
+
+@layer components {
+  /* technical micro label */
+  .tag {
+    @apply font-mono text-[10px] md:text-[11px] uppercase tracking-[0.25em] text-ash;
+  }
+
+  /* link with animated underline */
+  .link-line {
+    position: relative;
+  }
+  .link-line::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    height: 1px;
+    width: 100%;
+    background: var(--ember);
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .link-line:hover::after,
+  .link-line:focus-visible::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  /* buttons — sharp editorial edges */
+  .btn {
+    @apply inline-flex items-center gap-3 font-mono text-[11px] md:text-xs uppercase tracking-[0.2em] px-7 py-4 border transition-colors duration-300;
+  }
+  .btn--ember {
+    @apply bg-ember text-ink border-ember;
+  }
+  .btn--ember:hover {
+    @apply bg-bone border-bone;
+  }
+  .btn--ghost {
+    @apply border-bone/25 text-bone;
+  }
+  .btn--ghost:hover {
+    @apply border-ember text-ember;
+  }
+  .btn .btn-arrow {
+    transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .btn:hover .btn-arrow {
+    transform: translate(3px, -3px);
+  }
+
+  .grain {
+    position: fixed;
+    inset: -50%;
+    z-index: 90;
+    pointer-events: none;
+    opacity: 0.055;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .text-outline {
+    color: transparent;
+    -webkit-text-stroke: 1.5px var(--bone);
+  }
+}
+
+/* brand marquee */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 32s linear infinite;
+}
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .marquee-track {
+    animation: none;
+  }
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+@media (pointer: fine) {
+  .cursor-none-desktop,
+  .cursor-none-desktop * {
+    cursor: none;
+  }
+}

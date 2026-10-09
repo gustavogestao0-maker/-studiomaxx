@@ -1,0 +1,58 @@
+import { REVIEWS } from "@/data/content";
+import { Fade, Reveal } from "./Motion";
+
+export default function Reviews() {
+  const [q1, q2, q3] = REVIEWS.quotes;
+
+  return (
+    <section data-testid="reviews-section" className="px-5 py-24 md:px-10 md:py-36">
+      <div className="mb-16 flex flex-wrap items-end justify-between gap-8 md:mb-24">
+        <h2 className="font-display text-[clamp(2.6rem,6.5vw,6.5rem)] uppercase leading-[0.88]">
+          <Reveal>REAL PEOPLE.</Reveal>
+          <Reveal delay={0.08}>
+            <span className="text-outline">REAL EXPERIENCES.</span>
+          </Reveal>
+        </h2>
+        <Fade delay={0.15} className="text-left md:text-right">
+          <p className="font-mono text-4xl text-bone md:text-6xl" data-testid="reviews-rating">
+            {REVIEWS.rating}
+            <span className="text-xl text-ash md:text-3xl"> / {REVIEWS.scale}</span>
+          </p>
+          <p className="tag mt-3">
+            {REVIEWS.source} — {REVIEWS.count}
+          </p>
+        </Fade>
+      </div>
+
+      <div className="grid gap-10 md:grid-cols-12 md:gap-8">
+        <Fade className="md:col-span-7">
+          <figure className="border-l-2 border-ember pl-6 md:pl-10">
+            <blockquote className="font-serifed text-2xl italic leading-snug text-bone md:text-5xl">
+              “{q1}”
+            </blockquote>
+            <figcaption className="tag mt-6">( 01 ) — GOOGLE REVIEW</figcaption>
+          </figure>
+        </Fade>
+
+        <div className="flex flex-col justify-end gap-10 md:col-span-5">
+          <Fade delay={0.1}>
+            <figure className="border-t border-graphite pt-6">
+              <blockquote className="font-serifed text-xl italic text-bone/90 md:text-3xl">
+                “{q2}”
+              </blockquote>
+              <figcaption className="tag mt-4">( 02 ) — GOOGLE REVIEW</figcaption>
+            </figure>
+          </Fade>
+          <Fade delay={0.2}>
+            <figure className="border-t border-graphite pt-6 text-right">
+              <blockquote className="font-display text-4xl uppercase text-ember md:text-6xl">
+                “{q3}”
+              </blockquote>
+              <figcaption className="tag mt-4">( 03 ) — GOOGLE REVIEW</figcaption>
+            </figure>
+          </Fade>
+        </div>
+      </div>
+    </section>
+  );
+}
