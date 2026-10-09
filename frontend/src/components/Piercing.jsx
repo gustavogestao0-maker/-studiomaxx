@@ -6,9 +6,6 @@ export default function Piercing() {
     <section data-testid="piercing-section" className="bg-graphite">
       <div className="grid md:grid-cols-2">
         <div className="order-2 flex flex-col justify-between gap-12 px-5 py-20 md:order-1 md:px-10 md:py-32">
-          <Fade>
-            <p className="tag">( 04 — PIERCING )</p>
-          </Fade>
           <div>
             <h2 className="font-display text-[clamp(3rem,7vw,7rem)] uppercase leading-[0.88]">
               <Reveal>BEYOND</Reveal>

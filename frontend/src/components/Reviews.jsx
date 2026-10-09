@@ -30,7 +30,7 @@ export default function Reviews() {
             <blockquote className="font-serifed text-2xl italic leading-snug text-bone md:text-5xl">
               “{q1}”
             </blockquote>
-            <figcaption className="tag mt-6">( 01 ) — GOOGLE REVIEW</figcaption>
+            <figcaption className="tag mt-6">GOOGLE REVIEW</figcaption>
           </figure>
         </Fade>
 
@@ -40,7 +40,7 @@ export default function Reviews() {
               <blockquote className="font-serifed text-xl italic text-bone/90 md:text-3xl">
                 “{q2}”
               </blockquote>
-              <figcaption className="tag mt-4">( 02 ) — GOOGLE REVIEW</figcaption>
+              <figcaption className="tag mt-4">GOOGLE REVIEW</figcaption>
             </figure>
           </Fade>
           <Fade delay={0.2}>
@@ -48,7 +48,7 @@ export default function Reviews() {
               <blockquote className="font-display text-4xl uppercase text-ember md:text-6xl">
                 “{q3}”
               </blockquote>
-              <figcaption className="tag mt-4">( 03 ) — GOOGLE REVIEW</figcaption>
+              <figcaption className="tag mt-4">GOOGLE REVIEW</figcaption>
             </figure>
           </Fade>
         </div>

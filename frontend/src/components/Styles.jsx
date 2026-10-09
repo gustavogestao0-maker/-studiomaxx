@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { STYLES } from "@/data/content";
-import { EASE, Fade, Reveal } from "./Motion";
+import { EASE, Reveal } from "./Motion";
 
 export default function Styles() {
   const [active, setActive] = useState(0);
@@ -10,9 +10,6 @@ export default function Styles() {
 
   return (
     <section id="styles" data-testid="styles-section" className="px-5 py-24 md:px-10 md:py-36">
-      <Fade>
-        <p className="tag mb-5">( 02 — ESTILOS )</p>
-      </Fade>
       <h2 className="mb-14 font-display text-[clamp(3.2rem,9vw,8.5rem)] uppercase leading-[0.88] md:mb-20">
         <Reveal>FIND YOUR</Reveal>
         <Reveal delay={0.08}>

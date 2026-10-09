@@ -17,9 +17,6 @@ export default function Contact() {
       </div>
 
       <div className="relative px-5 pb-16 pt-28 md:px-10 md:pb-24 md:pt-40">
-        <Fade>
-          <p className="tag mb-6">( 05 — AGENDAMENTO )</p>
-        </Fade>
         <h2 className="font-display text-[clamp(3.4rem,10.5vw,11rem)] uppercase leading-[0.86]">
           <Reveal>YOUR NEXT</Reveal>
           <Reveal delay={0.07}>
@@ -47,7 +44,6 @@ export default function Contact() {
           className="mt-24 grid items-end gap-6 border-t border-bone/15 pt-8 md:mt-36 md:grid-cols-[1fr_auto]"
         >
           <Fade>
-            <p className="tag mb-4">( LOCALIZAÇÃO )</p>
             <address className="not-italic font-mono text-xs leading-relaxed tracking-[0.15em] text-bone/90 md:text-sm">
               {ADDRESS.lines.map((l) => (
                 <span key={l} className="block">

@@ -23,10 +23,6 @@ export default function Artist() {
         </Fade>
 
         <div className="flex flex-col justify-between py-2 md:col-span-5 md:pl-10 lg:pl-16">
-          <Fade>
-            <p className="tag">( 03 — O ARTISTA )</p>
-          </Fade>
-
           <div className="py-10">
             <h2 className="font-display text-[clamp(3.4rem,7.5vw,7.5rem)] uppercase leading-[0.86]">
               <Reveal>SÉRGIO</Reveal>

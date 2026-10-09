@@ -9,9 +9,6 @@ export default function Gallery({ onOpen }) {
     <section id="works" data-testid="gallery-section" className="px-5 py-24 md:px-10 md:py-36">
       <header className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-20">
         <div>
-          <Fade>
-            <p className="tag mb-5">( 01 — PORTFÓLIO )</p>
-          </Fade>
           <h2 className="font-display text-[clamp(3.2rem,9vw,8.5rem)] uppercase leading-[0.88]">
             <Reveal>INK IS</Reveal>
             <Reveal delay={0.08}>
