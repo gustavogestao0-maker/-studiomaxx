@@ -57,9 +57,9 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - Tratamento P&B→cor no hover mantido. Galeria e piercing continuam com imagens de referência aguardando as fotos reais.
 
 ## Arte MAX no hero (2026-10-10)
-- Fundo da abertura trocado pela ARTE OFICIAL da marca (máquina de tatuagem em cobre com chamas, 1080×1350) em /img/hero-max.jpg — exibida em object-contain (fundo preto da arte se funde com o site), em cores, sem marcador de referência.
+- Fundo da abertura agora é a ARTE PANORÂMICA oficial (emblema MAX TATTOO em estúdio sombrio, 1672×941) em /img/hero-bg-wide.jpg — tela cheia (full-bleed) atrás da tipografia, em cores, com gradient de proteção para leitura e parallax sutil.
 - og:image do compartilhamento aponta para a arte oficial.
-- hero.jpg e hero-800.jpg (foto de sessão de referência) removidos do projeto.
+- Versões antigas (hero.jpg, hero-800.jpg, hero-max.jpg) removidas do projeto.
 
 ## Otimização mobile (2026-10-10)
 - Primeira dobra: hero com imagem 52svh, espaçamentos compactos no mobile — botões "EXPLORAR TRABALHOS" e "AGENDAR SESSÃO" visíveis sem rolagem em 360/390/430.

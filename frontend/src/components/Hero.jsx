@@ -37,24 +37,24 @@ export default function Hero({ onBook }) {
       className="relative flex min-h-[100svh] flex-col overflow-hidden"
     >
       <motion.div
-        className="absolute inset-x-0 top-0 h-[52svh] md:inset-x-auto md:right-0 md:top-0 md:h-full md:w-[46vw]"
+        className="absolute inset-0"
         initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
         animate={reduce ? { opacity: 1 } : { clipPath: "inset(0 0 0% 0)" }}
         transition={{ duration: 1.1, ease: EASE, delay: 0.15 }}
       >
-        <motion.div className="h-full w-full" style={reduce ? undefined : { y: imgY, scale: 1.12 }}>
+        <motion.div className="h-full w-full" style={reduce ? undefined : { y: imgY, scale: 1.08 }}>
           <img
             src={HERO_IMAGE}
-            alt="Logotipo MAX Tattoo — máquina de tatuagem em cobre com chamas"
-            width={1080}
-            height={1350}
+            alt="Emblema MAX Tattoo em estúdio sombrio — máquina de tatuagem em cobre"
+            width={1672}
+            height={941}
             fetchPriority="high"
-            className="h-full w-full object-contain"
+            className="h-full w-full object-cover object-center"
           />
         </motion.div>
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent md:bg-gradient-to-r md:from-ink md:via-ink/30 md:to-transparent"
+          className="absolute inset-0 bg-gradient-to-t from-ink via-ink/45 to-ink/10 md:bg-gradient-to-r md:from-ink md:via-ink/40 md:to-ink/10"
         />
       </motion.div>
 
