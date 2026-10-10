@@ -4,7 +4,7 @@ import { LINKS, NAV } from "@/data/content";
 import { lockScroll, scrollToId } from "@/lib/scroll";
 import { EASE } from "./Motion";
 
-export default function Navbar() {
+export default function Navbar({ onBook }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -62,27 +62,25 @@ export default function Navbar() {
                 {item.label}.
               </a>
             ))}
-            <a
-              href={LINKS.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={onBook}
               data-testid="nav-cta"
               className="btn btn--ghost !px-5 !py-2.5"
             >
               AGENDAR <span className="btn-arrow" aria-hidden="true">↗</span>
-            </a>
+            </button>
           </div>
 
           <div className="flex items-center gap-3 md:hidden">
-            <a
-              href={LINKS.whatsapp}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={onBook}
               data-testid="nav-mobile-cta"
               className="border border-ember px-4 py-2 font-mono text-[11px] tracking-[0.2em] text-ember"
             >
               AGENDAR
-            </a>
+            </button>
             <button
               onClick={() => setOpen((v) => !v)}
               aria-expanded={open}

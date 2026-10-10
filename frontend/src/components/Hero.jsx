@@ -19,7 +19,7 @@ function MaskedLine({ children, delay, className = "" }) {
   );
 }
 
-export default function Hero() {
+export default function Hero({ onBook }) {
   const reduce = useReducedMotion();
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -129,15 +129,14 @@ export default function Hero() {
               >
                 EXPLORAR TRABALHOS <span className="btn-arrow" aria-hidden="true">↗</span>
               </a>
-              <a
-                href={LINKS.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={onBook}
                 data-testid="hero-cta-book"
                 className="btn btn--ghost justify-center"
               >
                 AGENDAR SESSÃO <span className="btn-arrow" aria-hidden="true">↗</span>
-              </a>
+              </button>
             </div>
           </MaskedLine>
         </div>

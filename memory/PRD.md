@@ -6,7 +6,9 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 ## Dados confirmados (integridade)
 - Studio Max Tattoo & Piercing — Sérgio Pereira, tatuador.
 - Sinop — MT. Rua das Pitangueiras, 668-A, Centro.
-- Telefone/WhatsApp: (66) 99711-1547 → https://wa.me/556699711547
+- WhatsApp Tatuagem: (66) 9 9711-1547 → https://wa.me/556699711547
+- WhatsApp Piercing: (66) 9 9988-1881 → https://wa.me/5566999881881
+- Agendamento: modal "O QUE VAMOS MARCAR?" (BookingModal) oferece TATUAGEM e PIERCING, cada um abrindo o WhatsApp correspondente com mensagem pré-preenchida.
 - Google Reviews: 4,6 / 5.0 — 9 avaliações (3 comentários reais exibidos).
 - Nada inventado: sem preços, prêmios, anos de experiência, biografia ou sistema de reservas online.
 

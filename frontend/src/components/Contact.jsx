@@ -1,7 +1,7 @@
 import { ADDRESS, CTA_BACKGROUND, LINKS } from "@/data/content";
 import { Fade, Reveal } from "./Motion";
 
-export default function Contact() {
+export default function Contact({ onBook }) {
   return (
     <section id="contact" data-testid="contact-section" className="relative overflow-hidden">
       <div className="absolute inset-0" aria-hidden="true">
@@ -28,15 +28,14 @@ export default function Contact() {
           <p className="tag mt-8 !tracking-[0.3em]">AGENDE SUA SESSÃO NO STUDIO MAX.</p>
         </Fade>
         <Fade delay={0.25}>
-          <a
-            href={LINKS.whatsapp}
-            target="_blank"
-            rel="noopener noreferrer"
+          <button
+            type="button"
+            onClick={onBook}
             data-testid="contact-whatsapp"
             className="btn btn--ember mt-10 !px-10 !py-5 !text-sm"
           >
             FALAR COM O STUDIO <span className="btn-arrow" aria-hidden="true">↗</span>
-          </a>
+          </button>
         </Fade>
         <Fade delay={0.3}>
           <p className="tag mt-6">

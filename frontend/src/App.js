@@ -14,6 +14,7 @@ import Artist from "@/components/Artist";
 import Piercing from "@/components/Piercing";
 import Reviews from "@/components/Reviews";
 import Contact from "@/components/Contact";
+import BookingModal from "@/components/BookingModal";
 
 class ErrorBoundary extends Component {
   constructor(props) {
@@ -37,6 +38,9 @@ class ErrorBoundary extends Component {
 
 function Site() {
   const [lbIndex, setLbIndex] = useState(null);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const openBooking = useCallback(() => setBookingOpen(true), []);
+  const closeBooking = useCallback(() => setBookingOpen(false), []);
   const closeLb = useCallback(() => setLbIndex(null), []);
   const navLb = useCallback(
     (dir) =>
@@ -68,18 +72,19 @@ function Site() {
       <div className="grain" aria-hidden="true" />
       <Cursor />
       <ScrollProgress />
-      <Navbar />
+      <Navbar onBook={openBooking} />
       <main>
-        <Hero />
+        <Hero onBook={openBooking} />
         <Marquee />
         <Gallery onOpen={setLbIndex} />
         <Styles />
         <Artist />
         <Piercing />
         <Reviews />
-        <Contact />
+        <Contact onBook={openBooking} />
       </main>
       <Lightbox index={lbIndex} onClose={closeLb} onNav={navLb} />
+      <BookingModal open={bookingOpen} onClose={closeBooking} />
     </div>
   );
 }
