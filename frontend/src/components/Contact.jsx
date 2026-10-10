@@ -39,7 +39,11 @@ export default function Contact() {
           </a>
         </Fade>
         <Fade delay={0.3}>
-          <p className="tag mt-6">ORÇAMENTO E AGENDAMENTO DIRETO PELO WHATSAPP</p>
+          <p className="tag mt-6">
+            TATUAGEM — ORÇAMENTO E AGENDAMENTO: {LINKS.phoneTattoo}
+            <br />
+            PIERCING — ORÇAMENTO E AGENDAMENTO: {LINKS.phonePiercing}
+          </p>
         </Fade>
 
         <div

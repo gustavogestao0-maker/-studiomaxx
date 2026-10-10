@@ -18,7 +18,7 @@ export default function Piercing() {
             </Fade>
             <Fade delay={0.2}>
               <a
-                href={LINKS.whatsapp}
+                href={LINKS.whatsappPiercing}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-testid="piercing-cta"
@@ -29,7 +29,7 @@ export default function Piercing() {
             </Fade>
           </div>
           <Fade>
-            <p className="tag">{LINKS.phoneDisplay} — SINOP / MT</p>
+            <p className="tag">AGENDAMENTO PIERCING — {LINKS.phonePiercing}</p>
           </Fade>
         </div>
 

@@ -40,7 +40,7 @@ export default function Artist() {
           <Fade delay={0.1}>
             <div className="space-y-2 border-t border-graphite pt-6">
               <p className="tag">TATUADOR — STUDIO MAX</p>
-              <p className="tag">SINOP / MT — {LINKS.phoneDisplay}</p>
+              <p className="tag">SINOP / MT — {LINKS.phoneTattoo}</p>
             </div>
           </Fade>
         </div>

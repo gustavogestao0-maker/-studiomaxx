@@ -133,7 +133,7 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <p className="tag">SINOP — MT · SÉRGIO PEREIRA · {LINKS.phoneDisplay}</p>
+            <p className="tag">SINOP — MT · SÉRGIO PEREIRA · {LINKS.phoneTattoo}</p>
           </motion.div>
         )}
       </AnimatePresence>
