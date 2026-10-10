@@ -1,7 +1,20 @@
+import { useRef, useState } from "react";
 import { REELS } from "@/data/content";
 import { Fade, Reveal } from "./Motion";
 
 function ReelCard({ reel, index }) {
+  const [mode, setMode] = useState("video");
+  const [sound, setSound] = useState(false);
+  const videoRef = useRef(null);
+
+  const toggleSound = () => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = !v.muted;
+    if (!v.muted) v.play().catch(() => {});
+    setSound(!v.muted);
+  };
+
   return (
     <Fade
       delay={index * 0.08}
@@ -11,17 +24,43 @@ function ReelCard({ reel, index }) {
     >
       <figure className="group border border-graphite bg-graphite" data-testid={`reel-card-${index}`}>
         <div className="relative aspect-[9/16] overflow-hidden bg-ink">
-          <iframe
-            src={reel.embed}
-            title={`Reel do Studio Max — vídeo ${reel.n}`}
-            data-testid={`reel-frame-${index}`}
-            loading="lazy"
-            className="absolute inset-0 h-full w-full scale-[1.16]"
-            frameBorder="0"
-            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-            allowFullScreen
-            referrerPolicy="strict-origin-when-cross-origin"
-          />
+          {mode === "video" ? (
+            <video
+              ref={videoRef}
+              src={`/videos/reel-${index + 1}.mp4`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              data-testid={`reel-video-${index}`}
+              onClick={toggleSound}
+              onError={() => setMode("embed")}
+              className="h-full w-full cursor-pointer object-cover"
+            />
+          ) : (
+            <iframe
+              src={reel.embed}
+              title={`Reel do Studio Max — vídeo ${reel.n}`}
+              data-testid={`reel-frame-${index}`}
+              loading="lazy"
+              className="absolute inset-0 h-full w-full scale-[1.16]"
+              frameBorder="0"
+              allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+              allowFullScreen
+              referrerPolicy="strict-origin-when-cross-origin"
+            />
+          )}
+          {mode === "video" && (
+            <button
+              type="button"
+              onClick={toggleSound}
+              data-testid={`reel-sound-${index}`}
+              className="tag absolute bottom-3 left-3 border border-bone/20 bg-ink/70 px-3 py-2 !text-[9px] text-bone transition-colors hover:border-ember hover:text-ember"
+            >
+              {sound ? "SOM ATIVO" : "ATIVAR SOM"}
+            </button>
+          )}
         </div>
         <figcaption className="flex items-center justify-between px-4 py-3">
           <span className="tag">REEL {reel.n}</span>

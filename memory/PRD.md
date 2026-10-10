@@ -56,6 +56,7 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - Desktop: 3 vídeos lado a lado com o do meio deslocado para baixo (assimetria editorial). Mobile: sequência horizontal com scroll-snap (como o Instagram), cards de 80vw.
 - Cada card tem rótulo "REEL 0X" e link "ABRIR NO INSTAGRAM ↗" (fallback elegante caso o embed não carregue). Links preservados exatamente como fornecidos.
 - Arquivo: Reels.jsx + REELS em content.js. Validado: 3 iframes carregam com vídeo real, sem rolagem horizontal da página.
+- Player próprio de vídeo (2026-10-10): cada card tenta reproduzir /videos/reel-1..3.mp4 com autoplay MUDO em loop (playsInline) e botão "ATIVAR SOM" (clique alterna o som) — sem nenhuma barra do Instagram. Se o MP4 ainda não existir, o card cai automaticamente no embed oficial do Instagram (fallback). PENDENTE: cliente enviar os 3 arquivos MP4 dos Reels para ativar o modo sem chrome.
 
 ## Fotos reais do estúdio (2026-10-10)
 - 3 trabalhos reais do Sérgio integrados na galeria e nos estilos: árvore com rosto (BLACKWORK), mulher com flores (OLD SCHOOL), espada cravada na pedra (FINE LINE) — arquivos real-blackwork.jpg, real-oldschool.jpg, real-finline.jpg (+ variantes -600), com flag `real: true`.
