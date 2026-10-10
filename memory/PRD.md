@@ -56,8 +56,10 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - Desktop: 3 vídeos lado a lado com o do meio deslocado para baixo (assimetria editorial). Mobile: sequência horizontal com scroll-snap (como o Instagram), cards de 80vw.
 - Cada card tem rótulo "REEL 0X" e link "ABRIR NO INSTAGRAM ↗" (fallback elegante caso o embed não carregue). Links preservados exatamente como fornecidos.
 - Arquivo: Reels.jsx + REELS em content.js. Validado: 3 iframes carregam com vídeo real, sem rolagem horizontal da página.
-- Player próprio de vídeo (2026-10-10): cada card tenta reproduzir /videos/reel-1..3.mp4 com autoplay MUDO em loop (playsInline) e botão "ATIVAR SOM" (clique alterna o som) — sem nenhuma barra do Instagram. Se o MP4 ainda não existir, o card cai automaticamente no embed oficial do Instagram (fallback). PENDENTE: cliente enviar os 3 arquivos MP4 dos Reels para ativar o modo sem chrome.
+- Player próprio de vídeo (2026-10-10): cada card reproduz /videos/reel-1..3.mp4 com autoplay MUDO em loop (playsInline) e botão "ATIVAR SOM" (clique alterna o som) — sem nenhuma barra do Instagram. Se o MP4 falhar, cai no embed oficial (fallback).
+- MP4s EXTRAÍDOS e hospedados localmente (2026-10-10): reel-1.mp4 (2,5MB), reel-2.mp4 (7,5MB), reel-3.mp4 (2,5MB) baixados dos próprios Reels públicos do estúdio com yt-dlp — nenhum link externo de vídeo.
 - Carrossel estilo Brutus (2026-10-10): um reel por vez em moldura 9/16 (max-w 380px), botões ‹ › no desktop, pontos de navegação (ativo laranja largo), selo "VER NO INSTAGRAM ↗" fixo no rodapé do vídeo, transição fade entre slides. Replicado do site de referência brutus-sorriso.
+- Nota de verificação: o navegador headless do sandbox não tem codec H.264 (confirmado via canPlayType) e exibe o fallback; navegadores reais (Chrome/Safari/Firefox, Android/iPhone/desktop) suportam H.264 e reproduzem os vídeos locais sem chrome.
 - Chrome do Instagram escondido (2026-10-10): iframe do embed com scale 1.32 — cabeçalho superior e barra branca "Watch on Instagram" ficam fora do enquadramento; apenas o vídeo aparece. Limitação: extras do player do IG podem variar conforme mudanças do Instagram; solução definitiva continua sendo os MP4s locais.
 
 ## Fotos reais do estúdio (2026-10-10)
