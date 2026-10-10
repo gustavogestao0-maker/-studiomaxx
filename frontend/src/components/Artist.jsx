@@ -21,18 +21,15 @@ export default function Artist() {
             >
               <img
                 src={ARTIST_IMAGE}
-                srcSet="/img/artist.jpg 1200w, /img/artist-800.jpg 800w"
+                srcSet="/img/artist.jpg 460w, /img/artist-800.jpg 800w"
                 sizes="(max-width: 767px) 92vw, 55vw"
-                alt="Sérgio Pereira, tatuador do Studio Max — imagem de referência"
-                width={1200}
-                height={1500}
+                alt="Sérgio Pereira, tatuador do Studio Max"
+                width={460}
+                height={752}
                 loading="lazy"
-                className="bw h-full w-full object-cover"
+                className="bw h-full w-full object-cover object-[50%_30%]"
               />
             </Parallax>
-            <span className="tag absolute bottom-4 right-4 !text-[9px] bg-ink/70 px-2 py-1">
-              IMAGEM DE REFERÊNCIA — SUBSTITUIR
-            </span>
           </div>
           <span
             aria-hidden="true"

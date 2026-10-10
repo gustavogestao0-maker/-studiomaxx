@@ -51,6 +51,11 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - Hover da galeria simplificado (apenas marcador de referência + REF); manteve interação assinatura (preview que segue cursor nos estilos), P&B→cor, moldura deslocada do artista, lightbox e booking modal.
 - Revalidado em 1440 e 390: sem rolagem horizontal, lightbox (03/06), navegação PT funcional, todos os CTAs intactos.
 
+## Foto real do artista (2026-10-10)
+- Seção do artista agora usa a FOTO REAL do Sérgio Pereira (enviada pelo cliente): /img/artist.jpg (460×752) + variante artist-800.jpg no srcSet.
+- Marcador "IMAGEM DE REFERÊNCIA" removido desta seção; alt atualizado ("Sérgio Pereira, tatuador do Studio Max"). Enquadramento object-[50%_30%] preserva o quadro com o crânio de chamas ao fundo.
+- Tratamento P&B→cor no hover mantido. Galeria e piercing continuam com imagens de referência aguardando as fotos reais.
+
 ## Otimização mobile (2026-10-10)
 - Primeira dobra: hero com imagem 52svh, espaçamentos compactos no mobile — botões "EXPLORAR TRABALHOS" e "AGENDAR SESSÃO" visíveis sem rolagem em 360/390/430.
 - Galeria em coluna única no mobile (todas as imagens largas, sem miniaturas), 12-col assimétrico a partir de md.
