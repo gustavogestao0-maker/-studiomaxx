@@ -29,7 +29,7 @@ export const GALLERY = [
     h: 900,
     cls: "col-span-2 md:col-span-7",
     ratio: "aspect-[4/3]",
-    tag: "SESSÃO",
+    tag: "PRETO & CINZA",
     alt: "Sessão de tatuagem em preto e cinza em andamento — imagem de referência",
   },
   {
@@ -92,7 +92,7 @@ export const GALLERY = [
     h: 750,
     cls: "col-span-2 md:col-span-7",
     ratio: "aspect-[16/10]",
-    tag: "BLACKWORK",
+    tag: "TRIBAL",
     alt: "Braço com tatuagem tribal preta — imagem de referência",
   },
   {

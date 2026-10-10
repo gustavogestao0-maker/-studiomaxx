@@ -14,7 +14,7 @@ export default function Piercing() {
               </Reveal>
             </h2>
             <Fade delay={0.15}>
-              <p className="tag mt-6">TATTOO & PIERCING</p>
+              <p className="tag mt-6">TATTOO & PIERCING NO MESMO ESTÚDIO.</p>
             </Fade>
             <Fade delay={0.2}>
               <a

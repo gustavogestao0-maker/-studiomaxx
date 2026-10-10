@@ -84,7 +84,7 @@ export default function Hero() {
           <span className="tag text-right">
             SINOP — MT
             <br />
-            TATTOO & PIERCING
+            BRASIL
           </span>
         </MaskedLine>
       </motion.div>

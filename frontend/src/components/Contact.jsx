@@ -38,6 +38,9 @@ export default function Contact() {
             FALAR COM O STUDIO <span className="btn-arrow" aria-hidden="true">↗</span>
           </a>
         </Fade>
+        <Fade delay={0.3}>
+          <p className="tag mt-6">ORÇAMENTO E AGENDAMENTO DIRETO PELO WHATSAPP</p>
+        </Fade>
 
         <div
           data-testid="location-module"
