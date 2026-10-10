@@ -42,7 +42,7 @@ function ReelSlide({ reel, index }) {
           src={reel.embed}
           title={`Reel do Studio Max — vídeo ${reel.n}`}
           loading="lazy"
-          className="absolute inset-0 h-full w-full scale-[1.16]"
+          className="absolute inset-0 h-full w-full scale-[1.32]"
           frameBorder="0"
           allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
           allowFullScreen
