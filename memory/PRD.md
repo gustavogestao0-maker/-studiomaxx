@@ -53,6 +53,7 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 
 ## Foto real do artista (2026-10-10)
 - Seção do artista usa a FOTO REAL HD do Sérgio Pereira (941×1672) em /img/artist-sergio-2.jpg + variante -800 no srcSet (nomes novos para vencer cache de navegador; versões antigas removidas).
+- Foto exibida INTEIRA (proporção natural 9/16, h-auto, sem crop) a pedido do cliente — parallax removido desta seção; moldura deslocada e barra laranja mantidas.
 - Marcador "IMAGEM DE REFERÊNCIA" removido desta seção; alt atualizado ("Sérgio Pereira, tatuador do Studio Max"). Enquadramento object-[50%_30%] preserva o quadro com o crânio de chamas ao fundo.
 - Tratamento P&B→cor no hover mantido. Galeria e piercing continuam com imagens de referência aguardando as fotos reais.
 

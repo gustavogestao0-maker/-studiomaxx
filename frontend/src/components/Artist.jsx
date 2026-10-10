@@ -1,5 +1,5 @@
 import { LINKS } from "@/data/content";
-import { Fade, Parallax, Reveal } from "./Motion";
+import { Fade, Reveal } from "./Motion";
 
 export default function Artist() {
   return (
@@ -10,26 +10,23 @@ export default function Artist() {
     >
       <div className="relative grid gap-12 px-5 md:grid-cols-12 md:gap-0 md:px-10 lg:px-16">
         <Fade className="relative md:col-span-7">
-          <div className="relative z-10 md:w-[88%]">
+          <div className="relative z-10 md:w-[55%] lg:w-[50%]">
             <span
               aria-hidden="true"
               className="absolute -left-3 -top-3 hidden h-full w-full border border-ash/30 md:block"
             />
-            <Parallax
-              amount={28}
-              className="group relative aspect-[4/5] max-h-[85vh] w-full bg-ink"
-            >
+            <div className="group relative bg-ink">
               <img
                 src="/img/artist-sergio-2.jpg"
                 srcSet="/img/artist-sergio-2.jpg 941w, /img/artist-sergio-2-800.jpg 800w"
-                sizes="(max-width: 767px) 92vw, 55vw"
+                sizes="(max-width: 767px) 92vw, 40vw"
                 alt="Sérgio Pereira, tatuador do Studio Max"
                 width={941}
                 height={1672}
                 loading="lazy"
-                className="bw h-full w-full object-cover object-[50%_32%]"
+                className="bw h-auto w-full"
               />
-            </Parallax>
+            </div>
           </div>
           <span
             aria-hidden="true"
