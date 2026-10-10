@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Volume2, VolumeX } from "lucide-react";
 import { REELS } from "@/data/content";
 import { Fade, Reveal } from "./Motion";
@@ -77,7 +77,15 @@ function ReelSlide({ reel, index }) {
 
 export default function Reels() {
   const [idx, setIdx] = useState(0);
+  const reduce = useReducedMotion();
   const go = (d) => setIdx((i) => (i + d + REELS.length) % REELS.length);
+
+  /* troca automática de vídeo a cada 8s (reinicia quando o usuário navega) */
+  useEffect(() => {
+    if (reduce) return undefined;
+    const t = setTimeout(() => setIdx((i) => (i + 1) % REELS.length), 8000);
+    return () => clearTimeout(t);
+  }, [idx, reduce]);
 
   return (
     <section
