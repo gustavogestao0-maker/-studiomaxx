@@ -10,7 +10,7 @@ export const LINKS = {
   maps:
     "https://www.google.com/maps/search/?api=1&query=" +
     encodeURIComponent("Rua das Pitangueiras, 668-A, Centro, Sinop - MT"),
-  phoneDisplay: "(66) 99711-1547",
+  phoneDisplay: "(66) 9 9711-1547",
 };
 
 export const NAV = [
