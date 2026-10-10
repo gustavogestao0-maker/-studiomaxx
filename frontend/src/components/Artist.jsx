@@ -20,12 +20,14 @@ export default function Artist() {
               className="group relative aspect-[4/5] max-h-[85vh] w-full bg-ink"
             >
               <img
-                src="/img/artist-sergio.jpg"
+                src="/img/artist-sergio-2.jpg"
+                srcSet="/img/artist-sergio-2.jpg 941w, /img/artist-sergio-2-800.jpg 800w"
+                sizes="(max-width: 767px) 92vw, 55vw"
                 alt="Sérgio Pereira, tatuador do Studio Max"
-                width={460}
-                height={752}
+                width={941}
+                height={1672}
                 loading="lazy"
-                className="bw h-full w-full object-cover object-[50%_30%]"
+                className="bw h-full w-full object-cover object-[50%_32%]"
               />
             </Parallax>
           </div>
