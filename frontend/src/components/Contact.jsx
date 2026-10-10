@@ -18,11 +18,10 @@ export default function Contact({ onBook }) {
 
       <div className="relative px-5 pb-16 pt-28 md:px-10 md:pb-24 md:pt-40">
         <h2 className="font-display text-[clamp(3.4rem,10.5vw,11rem)] uppercase leading-[0.86]">
-          <Reveal>YOUR NEXT</Reveal>
+          <Reveal>SEU PRÓXIMO</Reveal>
           <Reveal delay={0.07}>
-            <span className="text-ember">PIECE</span> STARTS
+            <span className="text-ember">PROJETO.</span>
           </Reveal>
-          <Reveal delay={0.14}>HERE.</Reveal>
         </h2>
         <Fade delay={0.2}>
           <p className="tag mt-8 !tracking-[0.3em]">AGENDE SUA SESSÃO NO STUDIO MAX.</p>

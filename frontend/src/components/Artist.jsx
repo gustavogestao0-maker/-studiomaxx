@@ -8,16 +8,6 @@ export default function Artist() {
       data-testid="artist-section"
       className="relative overflow-hidden bg-graphite py-24 md:py-40"
     >
-      <span aria-hidden="true" className="ghost-text -right-6 top-4">
-        SÉRGIO
-      </span>
-      <span
-        aria-hidden="true"
-        className="vert tag absolute left-5 top-1/2 hidden -translate-y-1/2 lg:block"
-      >
-        SÉRGIO PEREIRA — TATUADOR — STUDIO MAX
-      </span>
-
       <div className="relative grid gap-12 px-5 md:grid-cols-12 md:gap-0 md:px-10 lg:px-16">
         <Fade className="relative md:col-span-7">
           <div className="relative z-10 md:w-[88%]">

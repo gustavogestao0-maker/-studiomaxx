@@ -9,15 +9,11 @@ export default function Reviews() {
       data-testid="reviews-section"
       className="relative overflow-hidden px-5 py-24 md:px-10 md:py-40"
     >
-      <span aria-hidden="true" className="ghost-text -left-8 top-2">
-        4,6 / 5
-      </span>
-
       <div className="relative mb-16 flex flex-wrap items-end justify-between gap-8 md:mb-24">
         <h2 className="font-display text-[clamp(2.6rem,6.5vw,6.5rem)] uppercase leading-[0.88]">
-          <Reveal>REAL PEOPLE.</Reveal>
+          <Reveal>O QUE DIZEM</Reveal>
           <Reveal delay={0.08}>
-            <span className="text-outline">REAL EXPERIENCES.</span>
+            <span className="text-outline">OS CLIENTES.</span>
           </Reveal>
         </h2>
         <Fade delay={0.15} className="text-left md:text-right">

@@ -40,14 +40,10 @@ export default function Styles() {
       }}
       onMouseLeave={() => setFollowerOn(false)}
     >
-      <span aria-hidden="true" className="ghost-text -right-10 bottom-0">
-        STYLES
-      </span>
-
       <h2 className="relative mb-14 font-display text-[clamp(3.2rem,9vw,8.5rem)] uppercase leading-[0.88] md:mb-20">
-        <Reveal>FIND YOUR</Reveal>
+        <Reveal>ESTILOS</Reveal>
         <Reveal delay={0.08}>
-          <span className="text-outline">STYLE.</span>
+          <span className="text-outline">E SERVIÇOS.</span>
         </Reveal>
       </h2>
 

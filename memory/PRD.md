@@ -44,6 +44,13 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - Avaliações: nota 4,6 gigante em Anton laranja, aspas decorativas enormes em bronze, citação principal em text-6xl serif.
 - Escala tipográfica mais agressiva, paddings py-40, grain reforçado. Funcionalidades (lightbox, booking modal, lenis, cursor, menu mobile) preservadas e retestadas.
 
+## Limpeza profunda / revisão crítica (2026-10-10)
+- Galeria reduzida de 9 para 6 imagens (g1–g6), mantendo as mais variadas: sessão P&B, blackwork, old school colorida, minimalista, oriental e flash; layout final em 7/5 + 4/4/4 + 12 (flash em tela cheia). Estrutura pronta para receber as fotos reais (g1..g6 + variantes -600).
+- Marquee removido (faixa animada com palavras repetidas); tipografias fantasma de fundo removidas de todas as seções; rótulos verticais decorativos removidos.
+- Todos os títulos em português: "TRABALHOS DO ESTÚDIO.", "ESTILOS E SERVIÇOS.", "PIERCING." (serif itálico), "O QUE DIZEM OS CLIENTES.", "SEU PRÓXIMO PROJETO."; navegação em PT (TRABALHOS. ESTILOS. ARTISTA. CONTATO.); "SCROLL" → "ROLE".
+- Hover da galeria simplificado (apenas marcador de referência + REF); manteve interação assinatura (preview que segue cursor nos estilos), P&B→cor, moldura deslocada do artista, lightbox e booking modal.
+- Revalidado em 1440 e 390: sem rolagem horizontal, lightbox (03/06), navegação PT funcional, todos os CTAs intactos.
+
 ## Otimização mobile (2026-10-10)
 - Primeira dobra: hero com imagem 52svh, espaçamentos compactos no mobile — botões "EXPLORAR TRABALHOS" e "AGENDAR SESSÃO" visíveis sem rolagem em 360/390/430.
 - Galeria em coluna única no mobile (todas as imagens largas, sem miniaturas), 12-col assimétrico a partir de md.

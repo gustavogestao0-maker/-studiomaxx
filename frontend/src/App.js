@@ -6,7 +6,6 @@ import Cursor from "@/components/Cursor";
 import ScrollProgress from "@/components/ScrollProgress";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Marquee from "@/components/Marquee";
 import Gallery from "@/components/Gallery";
 import Lightbox from "@/components/Lightbox";
 import Styles from "@/components/Styles";
@@ -75,7 +74,6 @@ function Site() {
       <Navbar onBook={openBooking} />
       <main>
         <Hero onBook={openBooking} />
-        <Marquee />
         <Gallery onOpen={setLbIndex} />
         <Styles />
         <Artist />

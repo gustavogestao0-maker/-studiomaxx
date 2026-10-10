@@ -7,17 +7,12 @@ export default function Piercing() {
       data-testid="piercing-section"
       className="relative overflow-hidden border-y border-graphite bg-ink"
     >
-      <span aria-hidden="true" className="ghost-text -left-8 bottom-0">
-        PIERCING
-      </span>
-
       <div className="relative grid md:grid-cols-2">
         <div className="order-2 flex flex-col justify-between gap-12 px-5 py-20 md:order-1 md:px-10 md:py-32">
           <div>
-            <h2 className="font-serifed text-5xl italic leading-[1.02] text-bone md:text-8xl">
-              <Reveal>BEYOND</Reveal>
-              <Reveal delay={0.08}>
-                THE <span className="text-ember">INK.</span>
+            <h2 className="font-serifed text-6xl italic leading-[1.02] text-bone md:text-9xl">
+              <Reveal>
+                PIERCING<span className="text-ember">.</span>
               </Reveal>
             </h2>
             <Fade delay={0.15}>

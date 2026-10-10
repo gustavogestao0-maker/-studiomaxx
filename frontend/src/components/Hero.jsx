@@ -36,15 +36,6 @@ export default function Hero({ onBook }) {
       data-testid="hero"
       className="relative flex min-h-[100svh] flex-col overflow-hidden"
     >
-      <span aria-hidden="true" className="ghost-text -bottom-8 left-0 whitespace-nowrap">
-        STUDIO MAX
-      </span>
-      <span
-        aria-hidden="true"
-        className="vert tag absolute left-6 top-1/2 hidden -translate-y-1/2 xl:block"
-      >
-        DESDE 1994 — SINOP / MT
-      </span>
       <motion.div
         className="absolute inset-x-0 top-0 h-[52svh] md:inset-x-auto md:right-0 md:top-0 md:h-full md:w-[46vw]"
         initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
@@ -165,7 +156,7 @@ export default function Hero({ onBook }) {
           className="font-mono text-[9px] tracking-[0.3em] text-ash"
           style={{ writingMode: "vertical-rl" }}
         >
-          SCROLL
+          ROLE
         </motion.span>
         <span className="relative block h-14 w-px overflow-hidden bg-bone/30">
           {!reduce && (

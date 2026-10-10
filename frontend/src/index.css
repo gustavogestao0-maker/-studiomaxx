@@ -62,13 +62,6 @@
     @apply font-mono text-[10px] md:text-[11px] uppercase tracking-[0.25em] text-ash;
   }
 
-  /* giant ghost watermark behind sections */
-  .ghost-text {
-    @apply pointer-events-none absolute z-0 select-none font-display uppercase leading-none text-transparent;
-    font-size: clamp(5.5rem, 21vw, 19rem);
-    -webkit-text-stroke: 1.5px rgba(136, 134, 128, 0.13);
-  }
-
   /* photography treatments */
   .bw {
     filter: grayscale(100%) contrast(1.05);
@@ -79,12 +72,6 @@
   }
   .bw-static {
     filter: grayscale(100%) contrast(1.08) brightness(0.92);
-  }
-
-  /* vertical editorial label */
-  .vert {
-    writing-mode: vertical-rl;
-    transform: rotate(180deg);
   }
 
   /* iOS safe area for bottom-fixed surfaces */
