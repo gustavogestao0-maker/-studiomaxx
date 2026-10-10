@@ -51,6 +51,12 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - Hover da galeria simplificado (apenas marcador de referência + REF); manteve interação assinatura (preview que segue cursor nos estilos), P&B→cor, moldura deslocada do artista, lightbox e booking modal.
 - Revalidado em 1440 e 390: sem rolagem horizontal, lightbox (03/06), navegação PT funcional, todos os CTAs intactos.
 
+## Seção de Reels do Instagram (2026-10-10)
+- Nova seção "STUDIO EM MOVIMENTO." ("Um pouco do trabalho de perto.") entre avaliações e contato, com os 3 Reels oficiais incorporados via iframe oficial do Instagram (embed URLs, sem script extra), carregamento lazy e moldura editorial escura (borda grafite, leve zoom que esconde o chrome branco do Instagram).
+- Desktop: 3 vídeos lado a lado com o do meio deslocado para baixo (assimetria editorial). Mobile: sequência horizontal com scroll-snap (como o Instagram), cards de 80vw.
+- Cada card tem rótulo "REEL 0X" e link "ABRIR NO INSTAGRAM ↗" (fallback elegante caso o embed não carregue). Links preservados exatamente como fornecidos.
+- Arquivo: Reels.jsx + REELS em content.js. Validado: 3 iframes carregam com vídeo real, sem rolagem horizontal da página.
+
 ## Fotos reais do estúdio (2026-10-10)
 - 3 trabalhos reais do Sérgio integrados na galeria e nos estilos: árvore com rosto (BLACKWORK), mulher com flores (OLD SCHOOL), espada cravada na pedra (FINE LINE) — arquivos real-blackwork.jpg, real-oldschool.jpg, real-finline.jpg (+ variantes -600), com flag `real: true`.
 - Marcador "IMAGEM DE REFERÊNCIA" agora é condicional: fotos reais mostram "STUDIO MAX" / "TATUAGEM REAL"; as 3 restantes (sessão P&B g1, oriental g5, flash g6) + piercing seguem como referência.

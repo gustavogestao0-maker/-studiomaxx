@@ -79,6 +79,15 @@
     padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
   }
 
+  /* reels strip — hide scrollbar, keep swipe */
+  .no-scrollbar {
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   /* link with animated underline */
   .link-line {
     position: relative;

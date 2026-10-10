@@ -106,6 +106,16 @@ export const PIERCING_IMAGES = [
 
 export const CTA_BACKGROUND = img("cta-bg.jpg");
 
+export const REELS = [
+  { id: "DaGuvLaKNns", url: "https://www.instagram.com/reel/DaGuvLaKNns/" },
+  { id: "DFLsAlZvXYs", url: "https://www.instagram.com/reel/DFLsAlZvXYs/" },
+  { id: "DFdj4Q5PFEa", url: "https://www.instagram.com/reel/DFdj4Q5PFEa/" },
+].map((r, i) => ({
+  ...r,
+  embed: `https://www.instagram.com/reel/${r.id}/embed`,
+  n: String(i + 1).padStart(2, "0"),
+}));
+
 export const REVIEWS = {
   rating: "4,6",
   scale: "5.0",

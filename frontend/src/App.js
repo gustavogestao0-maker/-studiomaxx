@@ -12,6 +12,7 @@ import Styles from "@/components/Styles";
 import Artist from "@/components/Artist";
 import Piercing from "@/components/Piercing";
 import Reviews from "@/components/Reviews";
+import Reels from "@/components/Reels";
 import Contact from "@/components/Contact";
 import BookingModal from "@/components/BookingModal";
 
@@ -79,6 +80,7 @@ function Site() {
         <Artist />
         <Piercing />
         <Reviews />
+        <Reels />
         <Contact onBook={openBooking} />
       </main>
       <Lightbox index={lbIndex} onClose={closeLb} onNav={navLb} />
