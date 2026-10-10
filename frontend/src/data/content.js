@@ -96,8 +96,6 @@ export const STYLES = [
   { n: "06", name: "PIERCING", img: img("piercing.jpg"), alt: "Piercing — imagem de referência" },
 ];
 
-export const ARTIST_IMAGE = img("artist.jpg");
-
 export const PIERCING_IMAGES = [
   { src: img("piercing.jpg"), alt: "Piercing de orelha — imagem de referência" },
   { src: img("piercing2.jpg"), alt: "Piercing e tatuagem no pescoço — imagem de referência" },

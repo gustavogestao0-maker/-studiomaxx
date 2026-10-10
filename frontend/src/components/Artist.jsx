@@ -1,4 +1,4 @@
-import { ARTIST_IMAGE, LINKS } from "@/data/content";
+import { LINKS } from "@/data/content";
 import { Fade, Parallax, Reveal } from "./Motion";
 
 export default function Artist() {
@@ -20,9 +20,7 @@ export default function Artist() {
               className="group relative aspect-[4/5] max-h-[85vh] w-full bg-ink"
             >
               <img
-                src={ARTIST_IMAGE}
-                srcSet="/img/artist.jpg 460w, /img/artist-800.jpg 800w"
-                sizes="(max-width: 767px) 92vw, 55vw"
+                src="/img/artist-sergio.jpg"
                 alt="Sérgio Pereira, tatuador do Studio Max"
                 width={460}
                 height={752}
