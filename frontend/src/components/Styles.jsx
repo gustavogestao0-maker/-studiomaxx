@@ -1,23 +1,94 @@
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useMotionValue,
+  useReducedMotion,
+  useSpring,
+} from "framer-motion";
 import { STYLES } from "@/data/content";
 import { EASE, Reveal } from "./Motion";
 
 export default function Styles() {
   const [active, setActive] = useState(0);
   const [mobileOpen, setMobileOpen] = useState(0);
+  const [followerOn, setFollowerOn] = useState(false);
+  const [finePointer, setFinePointer] = useState(false);
+  const reduce = useReducedMotion();
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+  const sx = useSpring(x, { stiffness: 150, damping: 22, mass: 0.5 });
+  const sy = useSpring(y, { stiffness: 150, damping: 22, mass: 0.5 });
+  const sectionRef = useRef(null);
   const current = STYLES[active];
 
+  useEffect(() => {
+    setFinePointer(window.matchMedia("(pointer: fine)").matches);
+  }, []);
+
+  const useFollower = finePointer && !reduce;
+
   return (
-    <section id="styles" data-testid="styles-section" className="px-5 py-24 md:px-10 md:py-36">
-      <h2 className="mb-14 font-display text-[clamp(3.2rem,9vw,8.5rem)] uppercase leading-[0.88] md:mb-20">
+    <section
+      id="styles"
+      ref={sectionRef}
+      data-testid="styles-section"
+      className="relative overflow-hidden px-5 py-24 md:px-10 md:py-40"
+      onMouseMove={(e) => {
+        x.set(e.clientX + 28);
+        y.set(e.clientY - 150);
+      }}
+      onMouseLeave={() => setFollowerOn(false)}
+    >
+      <span aria-hidden="true" className="ghost-text -right-10 bottom-0">
+        STYLES
+      </span>
+
+      <h2 className="relative mb-14 font-display text-[clamp(3.2rem,9vw,8.5rem)] uppercase leading-[0.88] md:mb-20">
         <Reveal>FIND YOUR</Reveal>
         <Reveal delay={0.08}>
           <span className="text-outline">STYLE.</span>
         </Reveal>
       </h2>
 
-      <div className="grid gap-10 md:grid-cols-[1fr_minmax(280px,380px)]">
+      {useFollower && (
+        <motion.div
+          aria-hidden="true"
+          data-testid="styles-follower"
+          className="pointer-events-none fixed left-0 top-0 z-[110]"
+          style={{ x: sx, y: sy }}
+        >
+          <AnimatePresence mode="wait">
+            {followerOn && (
+              <motion.div
+                key={current.n}
+                className="relative h-[300px] w-[225px] overflow-hidden border border-ash/30 bg-graphite"
+                initial={{ opacity: 0, scale: 0.92 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                transition={{ duration: 0.35, ease: EASE }}
+              >
+                <img
+                  src={current.img}
+                  alt=""
+                  width={900}
+                  height={1200}
+                  className="h-full w-full object-cover"
+                />
+                <span className="tag absolute bottom-3 left-3 bg-ink/70 px-2 py-1 !text-[8px]">
+                  {current.name} — IMAGEM DE REFERÊNCIA
+                </span>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
+      )}
+
+      <div
+        className={`relative grid gap-10 ${
+          useFollower ? "" : "md:grid-cols-[1fr_minmax(280px,380px)]"
+        }`}
+      >
         <div role="list" data-testid="styles-list">
           {STYLES.map((s, i) => {
             const isOpenMobile = mobileOpen === i;
@@ -25,7 +96,11 @@ export default function Styles() {
               <div key={s.n} role="listitem" className="border-t border-graphite last:border-b">
                 <button
                   type="button"
-                  onMouseEnter={() => setActive(i)}
+                  data-cursor="hidden"
+                  onMouseEnter={() => {
+                    setActive(i);
+                    if (useFollower) setFollowerOn(true);
+                  }}
                   onFocus={() => setActive(i)}
                   onClick={() => {
                     setActive(i);
@@ -36,16 +111,18 @@ export default function Styles() {
                   className="group flex w-full items-center gap-5 py-5 text-left md:gap-8 md:py-7"
                 >
                   <span
-                    className={`font-display text-3xl uppercase leading-none transition-all duration-500 group-hover:translate-x-2 md:text-6xl ${
-                      active === i ? "text-ember md:translate-x-2" : "text-bone"
+                    className={`font-display text-4xl uppercase leading-none transition-all duration-500 group-hover:translate-x-3 md:text-7xl ${
+                      active === i ? "text-ember md:translate-x-3" : "text-bone"
                     }`}
                   >
                     {s.name}
                   </span>
                   <span
                     aria-hidden="true"
-                    className={`ml-auto text-lg transition-all duration-500 group-hover:text-ember ${
-                      active === i ? "text-ember opacity-100" : "text-ash opacity-0 group-hover:opacity-100"
+                    className={`ml-auto text-xl transition-all duration-500 group-hover:text-ember ${
+                      active === i
+                        ? "text-ember opacity-100"
+                        : "text-ash opacity-0 group-hover:opacity-100"
                     }`}
                   >
                     ↗
@@ -78,28 +155,33 @@ export default function Styles() {
           })}
         </div>
 
-        <div className="relative hidden md:block">
-          <div className="sticky top-28 aspect-[3/4] overflow-hidden bg-graphite" data-testid="styles-preview">
-            <AnimatePresence mode="popLayout">
-              <motion.img
-                key={current.n}
-                src={current.img}
-                alt={current.alt}
-                width={900}
-                height={1200}
-                loading="lazy"
-                className="absolute inset-0 h-full w-full object-cover"
-                initial={{ clipPath: "inset(100% 0 0 0)", scale: 1.08 }}
-                animate={{ clipPath: "inset(0% 0 0 0)", scale: 1 }}
-                exit={{ clipPath: "inset(0 0 100% 0)", scale: 1.04 }}
-                transition={{ duration: 0.7, ease: EASE }}
-              />
-            </AnimatePresence>
-            <span className="tag absolute bottom-4 left-4 bg-ink/60 px-2 py-1 !text-bone/80">
-              {current.name} — IMAGEM DE REFERÊNCIA
-            </span>
+        {!useFollower && (
+          <div className="relative hidden md:block">
+            <div
+              className="sticky top-28 aspect-[3/4] overflow-hidden bg-graphite"
+              data-testid="styles-preview"
+            >
+              <AnimatePresence mode="popLayout">
+                <motion.img
+                  key={current.n}
+                  src={current.img}
+                  alt={current.alt}
+                  width={900}
+                  height={1200}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                  initial={{ clipPath: "inset(100% 0 0 0)", scale: 1.08 }}
+                  animate={{ clipPath: "inset(0% 0 0 0)", scale: 1 }}
+                  exit={{ clipPath: "inset(0 0 100% 0)", scale: 1.04 }}
+                  transition={{ duration: 0.7, ease: EASE }}
+                />
+              </AnimatePresence>
+              <span className="tag absolute bottom-4 left-4 bg-ink/60 px-2 py-1 !text-bone/80">
+                {current.name} — IMAGEM DE REFERÊNCIA
+              </span>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </section>
   );

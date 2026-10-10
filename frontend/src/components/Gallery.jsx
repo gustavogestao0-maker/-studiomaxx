@@ -6,8 +6,15 @@ export default function Gallery({ onOpen }) {
   const reduce = useReducedMotion();
 
   return (
-    <section id="works" data-testid="gallery-section" className="px-5 py-24 md:px-10 md:py-36">
-      <header className="mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-20">
+    <section
+      id="works"
+      data-testid="gallery-section"
+      className="relative overflow-hidden px-5 py-24 md:px-10 md:py-40"
+    >
+      <span aria-hidden="true" className="ghost-text -right-10 top-0">
+        WORKS
+      </span>
+      <header className="relative mb-12 flex flex-wrap items-end justify-between gap-6 md:mb-20">
         <div>
           <h2 className="font-display text-[clamp(3.2rem,9vw,8.5rem)] uppercase leading-[0.88]">
             <Reveal>INK IS</Reveal>
@@ -52,7 +59,7 @@ export default function Gallery({ onOpen }) {
                 height={item.h}
                 loading="lazy"
                 decoding="async"
-                className={`${item.ratio} w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]`}
+                className={`${item.ratio} bw w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.05]`}
               />
               <div
                 aria-hidden="true"

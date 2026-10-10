@@ -1,108 +1,96 @@
 {
-  "theme": "dark",
-  "typography": {
-    "primary_heading": "Anton, Bebas Neue, or condensed equivalent (Enormous, expressive, uppercase only)",
-    "secondary_heading": "Cormorant Garamond or Playfair Display (Editorial serif for contrast)",
-    "body": "Manrope or Outfit (Modern clean sans for nav/info/general text)",
-    "technical": "JetBrains Mono or IBM Plex Mono (For micro-labels, numbers, and technical details)",
-    "scale_rules": "H1 up to text-[10vw] or clamp for massive cinematic scale. Fluid scaling is mandatory."
+  "project_context": {
+    "client": "Studio Max Tattoo & Piercing (Sérgio Pereira, Sinop-MT)",
+    "goal": "Repaginada visual completa para nível Awwwards. Estética de estúdio de tatuagem autoral misturando editorial contemporâneo, arte urbana e sofisticação.",
+    "current_stack": "React, Tailwind CSS, framer-motion, Lenis",
+    "theme_strategy": "Dark-first (Immersive & Bold)"
   },
   "colors": {
     "background_primary": "#080808",
     "background_secondary": "#171717",
-    "text_primary": "#F1EEE8",
-    "accent_primary": "#FF5A1F",
-    "accent_secondary": "#A76D3C",
-    "text_muted": "#888680"
+    "text_main": "#F1EEE8",
+    "accent_orange": "#FF5A1F",
+    "accent_bronze": "#A76D3C",
+    "muted_grey": "#888680"
+  },
+  "typography": {
+    "fonts": {
+      "display": "Anton",
+      "editorial": "Instrument Serif",
+      "body": "Manrope",
+      "monospace": "Space Mono"
+    },
+    "hierarchy_rules": {
+      "ghost_watermark": "Anton, text-[15vw] to text-[25vw], text-transparent, stroke-1 stroke-[#888680]/10, uppercase, leading-none, absolute, select-none, z-0",
+      "hero_title": "Anton, text-6xl md:text-[8vw], uppercase, tracking-tighter, leading-[0.85]",
+      "editorial_quotes": "Instrument Serif, italic, text-4xl md:text-6xl, text-[#F1EEE8], tracking-tight",
+      "body_text": "Manrope, text-base md:text-lg, text-[#888680], leading-relaxed",
+      "technical_labels": "Space Mono, uppercase, text-xs md:text-sm, tracking-[0.2em], text-[#F1EEE8]"
+    }
   },
   "visual_enhancers": {
-    "textures": "Subtle grain/noise overlay on dark backgrounds to give an editorial, print-like feel.",
-    "borders": "1px solid #171717 or #888680/30 for structure and division. Thin lines like editorial grids.",
-    "cursors": "Custom desktop cursor. Dot for default, 'VIEW' text or custom shape for gallery hovers.",
-    "overlays": "Progressive dark gradients (from-black/80 to-transparent) on images for text legibility, never fully obscuring the image unless intentional for hover."
+    "bw_to_color": "Images default to grayscale (filter: grayscale(100%)) with a 500ms ease-out transition to full color on hover.",
+    "offset_frames": "Images placed in a container with an absolute border (border border-[#888680]/30) offset by -translate-x-3 -translate-y-3 or rotate-2. Adds analog/urban feel.",
+    "tilted_marquee": "Marquee container rotated by -rotate-3, scaled to 110%, background #FF5A1F, text #080808. Creates aggressive, disruptive visual flow.",
+    "cursor_follower": "Custom inverted or difference cursor using framer-motion (mix-blend-difference, bg-white, rounded-full, 16x16 or 32x32 on hover).",
+    "noise_overlay": "Global fixed SVG noise/grain overlay (opacity-20, pointer-events-none, mix-blend-overlay) to remove digital flatness.",
+    "vertical_text": "Use writing-mode: vertical-rl; transform: rotate(180deg); for section labels in Space Mono to frame content asymmetrically."
   },
-  "grids_and_layouts": {
-    "general": "Strong asymmetric editorial composition. Break away from standard symmetrical boxes.",
-    "hero": "90-100svh cinematic layout. Dominant photography, giant typography overlapping the image, technical micro-labels tucked in corners.",
-    "portfolio": "Asymmetric editorial/masonry gallery. Unconventional aspect ratios. Not just a clean grid.",
-    "styles_section": "Typographic interface. Large rows (e.g., border-b) with 01/OLD SCHOOL, etc. Images appear on hover (following cursor or fixed side).",
-    "mobile": "Mobile-first, but must feel like a deliberate mobile editorial composition, not just stacked desktop. Respect 80vh max-height for images on mobile."
+  "layouts": {
+    "grid_system": "Bento/Asymmetrical. Avoid perfect symmetry. Use 12-column grid but span items unpredictably (e.g., col-span-5 and col-span-6 with gap-8).",
+    "spacing": "Hyper-generous. Use py-24 md:py-40 for section gaps. Let the typography breathe.",
+    "mobile_first": "Start single column (px-4). Scale up typography aggressively only on md and lg breakpoints."
   },
-  "motion": {
-    "scrolling": "Lenis for smooth momentum scrolling.",
-    "reveals": "Masked line-by-line reveal on load for hero typography. Staggered image reveals on scroll.",
-    "parallax": "Subtle parallax on hero background and large artist photo.",
-    "interactions": "Hover zoom on portfolio images, underline expansion on links, smooth dark overlay transitions.",
-    "marquee": "Continuous horizontal brand marquee using react-fast-marquee or framer-motion.",
-    "a11y": "Respect prefers-reduced-motion media query for all animations."
+  "motion_and_interactions": {
+    "scroll": "Lenis already installed. Ensure momentum feels heavy and premium.",
+    "reveal": "Use Framer Motion. Elements reveal via masked Y-axis translations (y: 100% to 0) with clip-path or overflow-hidden wrappers. ONLY animate transform and opacity.",
+    "cursor_image_preview": "In the Styles section, map image absolute coordinates to mouse position using framer-motion useMotionValue and useSpring.",
+    "reduced_motion": "Wrap animations in useReducedMotion hook from framer-motion to disable complex parallax/reveals for accessibility."
   },
-  "accessibility": {
-    "contrast": "Ensure text over images has sufficient contrast or relies on dark scrims/overlays. Minimum 4.5:1 for standard text.",
-    "keyboard": "Lightbox and interactive sections must have full keyboard navigation (Escape, arrow keys).",
-    "aria": "Mobile menu requires correct ARIA attributes. Interactive elements need data-testid for testing."
-  },
-  "media": {
-    "treatment": "High contrast, slightly desaturated or moody photography to match the dark art editorial theme.",
-    "lightbox": "Premium fullscreen lightbox with scroll lock, custom prev/next, and Escape to close."
-  },
-  "image_urls": [
+  "sections_blueprint": [
     {
-      "url": "https://images.unsplash.com/photo-1753260724749-25110c0ce91c?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NTYxODF8MHwxfHNlYXJjaHwzfHx0YXR0b28lMjBjbG9zZSUyMHVwfGVufDB8fHx8MTc5MTU4NjM0Nnww&ixlib=rb-4.1.0&q=85",
-      "category": "hero",
-      "description": "Close up of person getting tattooed. Cinematic and detailed."
+      "name": "Global Shell & Navbar",
+      "implementation": "Fixed navbar, backdrop-blur-xl, bg-[#080808]/70, border-b border-white/5. Logo 'MAX Tattoo — Desde 1994' (img/logo.jpg) rounded-full w-12 h-12. Animated mobile menu (full screen #171717 overlay, giant Anton links)."
     },
     {
-      "url": "https://images.unsplash.com/photo-1552627019-947c3789ffb5?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2NzB8MHwxfHNlYXJjaHwxfHx0YXR0b28lMjBhcnRpc3QlMjBwb3J0cmFpdHxlbnwwfHx8fDE3OTE1ODYzNTN8MA&ixlib=rb-4.1.0&q=85",
-      "category": "artist",
-      "description": "Grayscale photo of artist tattooing. Large portrait for Sérgio Pereira section."
+      "name": "Hero Cinematográfico",
+      "implementation": "min-h-[90vh], bg-[#080808]. Ghost text 'MAX TATTOO' in background. Foreground: Masked reveal of main title. Parallax background image (B&W). Offset frame layout for the main featured photo."
     },
     {
-      "url": "https://images.unsplash.com/photo-1607943917700-18ec6ff5a4c2?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxkYXJrJTIwdGF0dG9vJTIwc3R1ZGlvfGVufDB8fHx8MTc5MTU4NjM0OXww&ixlib=rb-4.1.0&q=85",
-      "category": "portfolio",
-      "description": "Man with blue and black body tattoo. Good for portfolio/styles."
+      "name": "Tilted Brand Marquee",
+      "implementation": "Cross-screen ribbon. bg-[#FF5A1F], text-[#080808]. text-4xl Anton uppercase. -rotate-2 transform. scale-105 to hide edges. Smooth horizontal translate via framer-motion or CSS."
     },
     {
-      "url": "https://images.unsplash.com/photo-1783973190331-53d4db4f697f?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwxfHxkYXJrJTIwdGF0dG9vJTIwc3R1ZGlvfGVufDB8fHx8MTc5MTU4NjM0OXww&ixlib=rb-4.1.0&q=85",
-      "category": "portfolio",
-      "description": "Tattoo artist preparing equipment. Good contextual shot."
+      "name": "Styles (Typographic Interface)",
+      "implementation": "List of massive Anton items (OLD SCHOOL, BLACKWORK, ORIENTAL, MINIMALISTA, COVER-UP, PIERCING) acting as a menu. border-b border-white/10. On hover: Text turns #FF5A1F, and a preview image appears following the cursor (fixed, pointer-events-none, z-50)."
+    },
+    {
+      "name": "Artist (Sérgio Pereira)",
+      "implementation": "bg-[#171717]. Layout split: Left side offset framed portrait (B&W to Color on hover). Right side: Giant Instrument Serif quote 'CADA PELE, UMA HISTÓRIA.' vertical Space Mono text 'SÉRGIO PEREIRA - FOUNDER'."
+    },
+    {
+      "name": "Piercing Module",
+      "implementation": "Instrument Serif 'BEYOND THE INK.' Minimalist, editorial look. Bronze accent #A76D3C for lines or small icons. High contrast photography."
+    },
+    {
+      "name": "Galeria Masonry Assimétrica",
+      "implementation": "9 local images (/img/g1.jpg to /img/g9.jpg). CSS columns (columns-1 md:columns-2 lg:columns-3 gap-6). Images MUST have overlay text 'IMAGEM DE REFERÊNCIA — SUBSTITUIR' (Space Mono, text-xs, bg-black/50, absolute bottom-4 left-4). B&W to color hover. Premium framer-motion lightbox on click."
+    },
+    {
+      "name": "Depoimentos & Social Proof",
+      "implementation": "Massive '4.6/5.0' in Anton. 9 avaliações text in Space Mono. 3 actual quotes beautifully typeset in Instrument Serif italic. Minimal UI, no standard cards. Just clean typography and grid."
+    },
+    {
+      "name": "Footer & Booking Modal",
+      "implementation": "Location: 'Rua das Pitangueiras 668-A Centro Sinop/MT' with subtle Maps button. Modal 'O QUE VAMOS MARCAR?': Fixed overlay, backdrop-blur-2xl bg-[#080808]/90. Massive buttons for TATUAGEM ((66) 9 9711-1547) and PIERCING ((66) 9 9988-1881) routing to wa.me. Hover effect fills button with #FF5A1F."
     }
   ],
-  "3d_libraries": {
-    "recommendation": "Not strictly necessary for this editorial aesthetic. Focus heavily on framer-motion for 2D typographic and layout transitions. If using WebGL, reserve for custom cursor or subtle fluid image distortion on hover, but raw DOM manipulation with Framer Motion is preferred for the 'print magazine' feel."
-  },
-  "component_path": "/app/frontend/src/components/ui",
-  "instructions_to_main_agent": {
-    "setup": "Build a custom React landing page using Tailwind CSS, Framer Motion, and Lenis.",
-    "header": "Minimalist navbar overlaying hero. Transparent initially, transitions to dark (#080808/80) with blur and thin bottom border (#171717) on scroll.",
-    "sections": [
-      "1. Hero: 90-100svh. Big overlapping Anton/Bebas text, orange (#FF5A1F) graphic detail, masked line reveal.",
-      "2. Marquee: Continuous brand text (STUDIO MAX — TATTOO — PIERCING — SINOP —).",
-      "3. Portfolio: Masonry layout, asymmetric, custom cursor over images.",
-      "4. Styles: Typographic list (01/OLD SCHOOL, etc.) revealing images on hover.",
-      "5. Artist: 55-65% width photo, huge name typography, editorial quote.",
-      "6. Piercing: Distinct layout, WhatsApp CTA.",
-      "7. Reviews: Editorial type, NO generic shadow cards. 4.6/5.0 Google Reviews. Quotes as text.",
-      "8. CTA: Huge type, #080808 background, WhatsApp CTA.",
-      "9. Location: Compact footer/module, address, Google Maps button."
-    ],
-    "restrictions": "Avoid SaaS landing look, rounded cards, generic gradients, and generic decorative icons. Everything must feel like a high-end fashion/art magazine."
-  },
-  "UNIVERSAL GUIDELINES FOR MAIN AGENT": [
-    "You tend to converge toward generic, 'on distribution' outputs. In frontend design, this creates what users call the 'AI slop' aesthetic. Avoid this: make creative, distinctive frontends that surprise and delight.",
-    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
-    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
-    "Create depth through layered design elements with z-index hierarchy.",
-    "Use glass-morphism effects with backdrop filters (12-24px blur).",
-    "You MUST NOT apply universal transition. Eg: transition: all. This results in breaking transforms. Always add transitions for specific interactive elements like button, input excluding transforms.",
-    "You MUST NOT center align the app container, ie do not add .App { text-align: center; } in the css file. This disrupts the human natural reading flow of text.",
-    "Always use modern button styles like pill-shaped, or sharp button with interaction animations & color relevant to the app style.",
-    "NEVER: use AI assistant Emoji characters like 🤖🧠💭💡🔮🎯 etc for icons.",
-    "Every interaction needs micro-animations - hover states, transitions, parallax effects, and entrance animations. Static = dead.",
-    "Use 2-3x more spacing than feels comfortable. Cramped designs look cheap.",
-    "Subtle grain textures, noise overlays, custom cursors, selection states, and loading animations: separates good from extraordinary.",
-    "Main agent relies on these image URLs. Missing categories (especially sponsor logos) = main agent will use placeholder text which is FORBIDDEN.",
-    "All interactive and key informational elements MUST include a data-testid attribute to facilitate robust automated testing.",
-    "DO NOT use complete transparent background in header, overlays, any surface that has content under it. Example: Dropdown with transparent background.",
-    "Provide guidelines for .js files not for .tsx files."
+  "universal_guidelines_for_main_agent": [
+    "DO NOT use standard HTML input/select elements, style everything via Tailwind or Shadcn equivalents.",
+    "ALL interactive elements (buttons, links, image thumbnails, modal triggers) MUST include a `data-testid` attribute (e.g., `data-testid='booking-modal-trigger'`).",
+    "Avoid standard Vercel/SaaS aesthetics completely. No rounded soft shadows. Use sharp 0px or slight 2px border radius, aggressive typographic scaling, and high contrast.",
+    "Ensure focus states are visible for accessibility (focus-visible:ring-2 focus-visible:ring-[#FF5A1F]).",
+    "Do not alter any existing data, copy, phone numbers, or paths to local images (/img/g1.jpg, etc).",
+    "Write components in .js or .jsx (not TypeScript), utilizing Tailwind CSS classes directly."
   ]
 }

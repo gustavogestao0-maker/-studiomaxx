@@ -34,6 +34,16 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - IntersectionObserver nunca disparava reveals em elementos totalmente recortados (clip-path/overflow mask reportam ratio 0 no Chrome). Corrigido observando wrappers não-recortados e animando o conteúdo interno via variants.
 - Imagens externas do Unsplash bloqueadas no preview (Cloudflare) → baixadas para /public/img (mais rápido e estável).
 
+## Repaginada visual (2026-10-10)
+- Tipografia fantasma gigante (outline 13% ash) ao fundo das seções: STUDIO MAX (hero), WORKS (galeria), STYLES, SÉRGIO (artista), PIERCING, 4,6/5 (avaliações).
+- Fotografia em preto e branco que ganha cor no hover (galeria e artista); hero sempre P&B cinematográfico com contraste.
+- Marquee transformado em fitas cruzadas inclinadas: fita laranja -2° (Anton preto) sobre fita grafite +1,5° em direção oposta.
+- Seção de estilos: linhas gigantes (text-7xl) e preview de imagem que SEGUE O CURSOR no desktop (spring, some no touch/reduced-motion, com fallback de painel sticky).
+- Artista: seção grafite com moldura deslocada, rótulo vertical, citação em Instrument Serif itálico grande e barra laranja.
+- Piercing: headline em serif itálico ("BEYOND THE INK.") com "INK." em laranja, linhas em bronze e marca d'água fantasma.
+- Avaliações: nota 4,6 gigante em Anton laranja, aspas decorativas enormes em bronze, citação principal em text-6xl serif.
+- Escala tipográfica mais agressiva, paddings py-40, grain reforçado. Funcionalidades (lightbox, booking modal, lenis, cursor, menu mobile) preservadas e retestadas.
+
 ## Personas
 - Cliente final (25–45): quer ver trabalhos, sentir o nível do estúdio e agendar pelo WhatsApp em 2 toques.
 - Dono do estúdio (Sérgio): quer um portfólio sob medida, fácil de manter (imagens substituíveis) e que converta.
