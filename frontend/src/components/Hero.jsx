@@ -45,22 +45,17 @@ export default function Hero({ onBook }) {
         <motion.div className="h-full w-full" style={reduce ? undefined : { y: imgY, scale: 1.12 }}>
           <img
             src={HERO_IMAGE}
-            srcSet="/img/hero.jpg 1400w, /img/hero-800.jpg 800w"
-            sizes="(max-width: 767px) 100vw, 46vw"
-            alt="Sessão de tatuagem em andamento no estúdio — imagem de referência"
-            width={1400}
-            height={1800}
+            alt="Logotipo MAX Tattoo — máquina de tatuagem em cobre com chamas"
+            width={1080}
+            height={1350}
             fetchPriority="high"
-            className="bw-static h-full w-full object-cover"
+            className="h-full w-full object-contain"
           />
         </motion.div>
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-t from-ink via-ink/25 to-transparent md:bg-gradient-to-r md:from-ink md:via-ink/30 md:to-transparent"
         />
-        <span className="tag absolute bottom-3 right-3 !text-[9px] bg-ink/70 px-2 py-1">
-          IMAGEM DE REFERÊNCIA — SUBSTITUIR
-        </span>
       </motion.div>
 
       <motion.div

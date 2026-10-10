@@ -22,7 +22,7 @@ export const NAV = [
   { label: "CONTATO", href: "#contact" },
 ];
 
-export const HERO_IMAGE = img("hero.jpg");
+export const HERO_IMAGE = img("hero-max.jpg");
 
 export const GALLERY = [
   {
