@@ -73,10 +73,18 @@ export default function Contact({ onBook }) {
       </div>
 
       <footer className="relative flex flex-wrap items-center justify-between gap-4 border-t border-bone/10 px-5 py-8 md:px-10">
-        <p className="font-display text-lg text-bone">
+        <p className="flex items-center gap-3 font-display text-lg text-bone">
+          <img
+            src="/img/logo.jpg"
+            alt="Logotipo do Studio Max Tattoo — desde 1994"
+            width={400}
+            height={400}
+            loading="lazy"
+            className="h-12 w-12 rounded-full object-cover"
+          />
           STUDIO MAX<span className="text-ember">.</span>
         </p>
-        <p className="tag">TATTOO & PIERCING — SÉRGIO PEREIRA</p>
+        <p className="tag">TATTOO & PIERCING — DESDE 1994 — SÉRGIO PEREIRA</p>
         <p className="tag">© {new Date().getFullYear()} — SINOP / MT</p>
       </footer>
     </section>

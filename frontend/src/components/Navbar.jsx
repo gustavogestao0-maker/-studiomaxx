@@ -45,9 +45,18 @@ export default function Navbar({ onBook }) {
             href="#top"
             onClick={(e) => go(e, "#top")}
             data-testid="nav-logo"
-            className="font-display text-lg tracking-wide text-bone md:text-xl"
+            className="flex items-center gap-3"
           >
-            STUDIO MAX<span className="text-ember">.</span>
+            <img
+              src="/img/logo.jpg"
+              alt="Logotipo do Studio Max Tattoo — desde 1994"
+              width={400}
+              height={400}
+              className="h-9 w-9 rounded-full object-cover md:h-10 md:w-10"
+            />
+            <span className="font-display text-lg tracking-wide text-bone md:text-xl">
+              STUDIO MAX<span className="text-ember">.</span>
+            </span>
           </a>
 
           <div className="hidden items-center gap-9 md:flex">

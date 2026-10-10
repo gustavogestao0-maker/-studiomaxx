@@ -84,7 +84,7 @@ export default function Hero({ onBook }) {
           <span className="tag text-right">
             SINOP — MT
             <br />
-            BRASIL
+            DESDE 1994
           </span>
         </MaskedLine>
       </motion.div>

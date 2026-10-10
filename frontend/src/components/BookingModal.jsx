@@ -50,7 +50,16 @@ export default function BookingModal({ open, onClose }) {
           onClick={(e) => e.target === e.currentTarget && onClose()}
         >
           <div className="flex items-center justify-between border-b border-graphite px-5 py-4 md:px-10">
-            <span className="tag">AGENDAMENTO — STUDIO MAX</span>
+            <span className="tag flex items-center gap-3">
+              <img
+                src="/img/logo.jpg"
+                alt=""
+                width={400}
+                height={400}
+                className="h-7 w-7 rounded-full object-cover"
+              />
+              AGENDAMENTO — STUDIO MAX
+            </span>
             <button
               ref={closeRef}
               type="button"
