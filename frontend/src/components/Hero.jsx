@@ -46,7 +46,7 @@ export default function Hero({ onBook }) {
         DESDE 1994 — SINOP / MT
       </span>
       <motion.div
-        className="absolute inset-x-0 top-0 h-[58svh] md:inset-x-auto md:right-0 md:top-0 md:h-full md:w-[46vw]"
+        className="absolute inset-x-0 top-0 h-[52svh] md:inset-x-auto md:right-0 md:top-0 md:h-full md:w-[46vw]"
         initial={reduce ? { opacity: 0 } : { clipPath: "inset(0 0 100% 0)" }}
         animate={reduce ? { opacity: 1 } : { clipPath: "inset(0 0 0% 0)" }}
         transition={{ duration: 1.1, ease: EASE, delay: 0.15 }}
@@ -54,6 +54,8 @@ export default function Hero({ onBook }) {
         <motion.div className="h-full w-full" style={reduce ? undefined : { y: imgY, scale: 1.12 }}>
           <img
             src={HERO_IMAGE}
+            srcSet="/img/hero.jpg 1400w, /img/hero-800.jpg 800w"
+            sizes="(max-width: 767px) 100vw, 46vw"
             alt="Sessão de tatuagem em andamento no estúdio — imagem de referência"
             width={1400}
             height={1800}
@@ -81,16 +83,16 @@ export default function Hero({ onBook }) {
 
       <motion.div
         style={reduce ? undefined : { opacity: uiFade }}
-        className="relative z-10 flex items-start justify-between px-5 pt-24 md:px-10 md:pt-28"
+        className="relative z-10 flex items-start justify-between px-5 pt-20 md:px-10 md:pt-28"
       >
-        <MaskedLine delay={0.9}>
-          <span className="tag">
+        <MaskedLine delay={0.9} className="shrink-0 whitespace-nowrap">
+          <span className="tag bg-ink/70 px-2 py-1">
             SÉRGIO PEREIRA — TATUADOR
             <span aria-hidden="true" className="ml-3 inline-block size-1.5 rotate-45 bg-ember align-middle" />
           </span>
         </MaskedLine>
-        <MaskedLine delay={1} className="hidden sm:block">
-          <span className="tag text-right">
+        <MaskedLine delay={1} className="hidden shrink-0 whitespace-nowrap sm:block">
+          <span className="tag bg-ink/70 px-2 py-1 text-right">
             SINOP — MT
             <br />
             DESDE 1994
@@ -100,7 +102,7 @@ export default function Hero({ onBook }) {
 
       <motion.div
         style={reduce ? undefined : { opacity: uiFade }}
-        className="relative z-10 mt-auto px-5 pb-8 md:px-10 md:pb-12"
+        className="relative z-10 mt-auto px-5 pb-6 md:px-10 md:pb-12"
       >
         <h1
           data-testid="hero-title"
@@ -112,7 +114,7 @@ export default function Hero({ onBook }) {
           </MaskedLine>
         </h1>
 
-        <div className="mt-8 flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
+        <div className="mt-6 flex flex-col gap-6 md:flex-row md:items-end md:justify-between md:gap-8">
           <div>
             <MaskedLine delay={0.6}>
               <p className="font-mono text-[11px] uppercase tracking-[0.35em] text-bone">

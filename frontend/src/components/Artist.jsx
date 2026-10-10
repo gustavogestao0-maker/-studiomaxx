@@ -31,6 +31,8 @@ export default function Artist() {
             >
               <img
                 src={ARTIST_IMAGE}
+                srcSet="/img/artist.jpg 1200w, /img/artist-800.jpg 800w"
+                sizes="(max-width: 767px) 92vw, 55vw"
                 alt="Sérgio Pereira, tatuador do Studio Max — imagem de referência"
                 width={1200}
                 height={1500}

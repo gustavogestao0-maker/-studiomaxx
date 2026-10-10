@@ -108,7 +108,9 @@ export const GALLERY = [
   },
 ].map((item, i) => ({
   ...item,
+  cls: item.cls.replace("col-span-1", "col-span-2"),
   src: img(`g${i + 1}.jpg`),
+  small: img(`g${i + 1}-600.jpg`),
   full: img(`g${i + 1}.jpg`),
   ref: String(i + 1).padStart(2, "0"),
 }));

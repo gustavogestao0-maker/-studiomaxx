@@ -54,12 +54,12 @@ export default function Navbar({ onBook }) {
               height={400}
               className="h-9 w-9 rounded-full object-cover md:h-10 md:w-10"
             />
-            <span className="font-display text-lg tracking-wide text-bone md:text-xl">
+            <span className="whitespace-nowrap font-display text-lg tracking-wide text-bone md:text-xl">
               STUDIO MAX<span className="text-ember">.</span>
             </span>
           </a>
 
-          <div className="hidden items-center gap-9 md:flex">
+          <div className="hidden items-center gap-6 md:flex xl:gap-9">
             {NAV.map((item) => (
               <a
                 key={item.label}
@@ -96,7 +96,7 @@ export default function Navbar({ onBook }) {
               aria-controls="mobile-menu"
               aria-label={open ? "Fechar menu" : "Abrir menu"}
               data-testid="nav-toggle"
-              className="flex h-10 w-10 flex-col items-end justify-center gap-1.5"
+              className="flex h-11 w-11 flex-col items-end justify-center gap-1.5"
             >
               <span className={`h-px w-6 bg-bone transition-transform duration-300 ${open ? "translate-y-[3.5px] rotate-45" : ""}`} />
               <span className={`h-px w-6 bg-bone transition-transform duration-300 ${open ? "-translate-y-[3.5px] -rotate-45" : ""}`} />
@@ -113,7 +113,7 @@ export default function Navbar({ onBook }) {
             aria-modal="true"
             aria-label="Menu de navegação"
             data-testid="mobile-menu"
-            className="fixed inset-0 z-[130] flex flex-col justify-between bg-ink/[0.97] px-6 pb-10 pt-28 backdrop-blur-lg md:hidden"
+            className="safe-b fixed inset-0 z-[130] flex flex-col justify-between bg-ink/[0.97] px-6 pt-28 backdrop-blur-lg md:hidden"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}

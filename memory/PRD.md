@@ -44,6 +44,14 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - Avaliações: nota 4,6 gigante em Anton laranja, aspas decorativas enormes em bronze, citação principal em text-6xl serif.
 - Escala tipográfica mais agressiva, paddings py-40, grain reforçado. Funcionalidades (lightbox, booking modal, lenis, cursor, menu mobile) preservadas e retestadas.
 
+## Otimização mobile (2026-10-10)
+- Primeira dobra: hero com imagem 52svh, espaçamentos compactos no mobile — botões "EXPLORAR TRABALHOS" e "AGENDAR SESSÃO" visíveis sem rolagem em 360/390/430.
+- Galeria em coluna única no mobile (todas as imagens largas, sem miniaturas), 12-col assimétrico a partir de md.
+- srcSet responsivo: variantes -600px das 9 imagens da galeria + hero-800/artist-800 carregadas em telas pequenas (menos peso no 4G).
+- Botões com área de toque ≥44px, toggle do menu 44px, safe-area (notch iPhone) no menu mobile.
+- Correções: logo do nav com nowrap (não quebra linha em 768px), gap dos links reduzido no tablet (logo não sobrepõe WORKS), rótulos do hero com fundo escuro (legibilidade sobre áreas claras da foto).
+- Validado sem rolagem horizontal em 360, 390, 430, 768, 1024 e 1440.
+
 ## Personas
 - Cliente final (25–45): quer ver trabalhos, sentir o nível do estúdio e agendar pelo WhatsApp em 2 toques.
 - Dono do estúdio (Sérgio): quer um portfólio sob medida, fácil de manter (imagens substituíveis) e que converta.

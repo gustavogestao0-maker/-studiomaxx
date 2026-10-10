@@ -54,6 +54,8 @@ export default function Gallery({ onOpen }) {
             >
               <img
                 src={item.src}
+                srcSet={`${item.src} 1200w, ${item.small} 600w`}
+                sizes="(max-width: 767px) 92vw, 50vw"
                 alt={item.alt}
                 width={item.w}
                 height={item.h}
