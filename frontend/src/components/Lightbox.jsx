@@ -94,7 +94,7 @@ export default function Lightbox({ index, onClose, onNav }) {
 
           <div className="flex items-center justify-between border-t border-graphite px-5 py-4 md:px-10">
             <span className="tag">{item.tag}</span>
-            <span className="tag">IMAGEM DE REFERÊNCIA — SUBSTITUIR</span>
+            <span className="tag">{item.real ? "STUDIO MAX" : "IMAGEM DE REFERÊNCIA — SUBSTITUIR"}</span>
           </div>
         </motion.div>
       )}

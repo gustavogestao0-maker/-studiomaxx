@@ -63,8 +63,12 @@ export default function Gallery({ onOpen }) {
                 {item.tag}
               </span>
               <div className="absolute inset-x-0 bottom-0 flex translate-y-2 items-end justify-between p-4 opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 md:p-5">
-                <span className="tag !text-[8px] text-bone/70">IMAGEM DE REFERÊNCIA — SUBSTITUIR</span>
-                <span className="font-mono text-[10px] text-ember">REF. {item.ref}</span>
+                {!item.real && (
+                  <span className="tag !text-[8px] text-bone/70">IMAGEM DE REFERÊNCIA — SUBSTITUIR</span>
+                )}
+                <span className={`font-mono text-[10px] text-ember ${item.real ? "ml-auto" : ""}`}>
+                  {item.real ? "STUDIO MAX" : `REF. ${item.ref}`}
+                </span>
               </div>
             </motion.button>
           </motion.div>

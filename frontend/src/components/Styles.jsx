@@ -72,7 +72,7 @@ export default function Styles() {
                   className="h-full w-full object-cover"
                 />
                 <span className="tag absolute bottom-3 left-3 bg-ink/70 px-2 py-1 !text-[8px]">
-                  {current.name} — IMAGEM DE REFERÊNCIA
+                  {current.name} — {current.real ? "TATUAGEM REAL" : "IMAGEM DE REFERÊNCIA"}
                 </span>
               </motion.div>
             )}
@@ -142,7 +142,7 @@ export default function Styles() {
                         loading="lazy"
                         className="mb-5 h-64 w-full object-cover"
                       />
-                      <p className="tag -mt-2 mb-2">IMAGEM DE REFERÊNCIA — SUBSTITUIR</p>
+                      <p className="tag -mt-2 mb-2">{s.real ? "TATUAGEM REAL — STUDIO MAX" : "IMAGEM DE REFERÊNCIA — SUBSTITUIR"}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -173,7 +173,7 @@ export default function Styles() {
                 />
               </AnimatePresence>
               <span className="tag absolute bottom-4 left-4 bg-ink/60 px-2 py-1 !text-bone/80">
-                {current.name} — IMAGEM DE REFERÊNCIA
+                {current.name} — {current.real ? "TATUAGEM REAL" : "IMAGEM DE REFERÊNCIA"}
               </span>
             </div>
           </div>

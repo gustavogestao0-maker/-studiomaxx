@@ -51,6 +51,11 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - Hover da galeria simplificado (apenas marcador de referência + REF); manteve interação assinatura (preview que segue cursor nos estilos), P&B→cor, moldura deslocada do artista, lightbox e booking modal.
 - Revalidado em 1440 e 390: sem rolagem horizontal, lightbox (03/06), navegação PT funcional, todos os CTAs intactos.
 
+## Fotos reais do estúdio (2026-10-10)
+- 3 trabalhos reais do Sérgio integrados na galeria e nos estilos: árvore com rosto (BLACKWORK), mulher com flores (OLD SCHOOL), espada cravada na pedra (FINE LINE) — arquivos real-blackwork.jpg, real-oldschool.jpg, real-finline.jpg (+ variantes -600), com flag `real: true`.
+- Marcador "IMAGEM DE REFERÊNCIA" agora é condicional: fotos reais mostram "STUDIO MAX" / "TATUAGEM REAL"; as 3 restantes (sessão P&B g1, oriental g5, flash g6) + piercing seguem como referência.
+- Proporção das fotos reais: aspect-[2/3] (crop leve, preserva a obra).
+
 ## Foto real do artista (2026-10-10)
 - Seção do artista usa a FOTO REAL HD do Sérgio Pereira (941×1672) em /img/artist-sergio-2.jpg + variante -800 no srcSet (nomes novos para vencer cache de navegador; versões antigas removidas).
 - Foto exibida INTEIRA (proporção natural 9/16, h-auto, sem crop) a pedido do cliente — parallax removido desta seção; moldura deslocada e barra laranja mantidas.
