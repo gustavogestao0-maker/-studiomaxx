@@ -1,4 +1,4 @@
-import { ADDRESS, CTA_BACKGROUND, LINKS } from "@/data/content";
+import { CTA_BACKGROUND, LINKS } from "@/data/content";
 import { Fade, Reveal } from "./Motion";
 
 export default function Contact({ onBook }) {
@@ -43,32 +43,6 @@ export default function Contact({ onBook }) {
             PIERCING — ORÇAMENTO E AGENDAMENTO: {LINKS.phonePiercing}
           </p>
         </Fade>
-
-        <div
-          data-testid="location-module"
-          className="mt-24 grid items-end gap-6 border-t border-bone/15 pt-8 md:mt-36 md:grid-cols-[1fr_auto]"
-        >
-          <Fade>
-            <address className="not-italic font-mono text-xs leading-relaxed tracking-[0.15em] text-bone/90 md:text-sm">
-              {ADDRESS.lines.map((l) => (
-                <span key={l} className="block">
-                  {l}
-                </span>
-              ))}
-            </address>
-          </Fade>
-          <Fade delay={0.1}>
-            <a
-              href={LINKS.maps}
-              target="_blank"
-              rel="noopener noreferrer"
-              data-testid="location-maps"
-              className="btn btn--ghost"
-            >
-              ABRIR NO MAPS <span className="btn-arrow" aria-hidden="true">↗</span>
-            </a>
-          </Fade>
-        </div>
       </div>
 
       <footer className="relative flex flex-wrap items-center justify-between gap-4 border-t border-bone/10 px-5 py-8 md:px-10">

@@ -68,6 +68,12 @@ Desenvolver um site completo para o Studio Max Tattoo & Piercing (tatuador Sérg
 - Marcador "IMAGEM DE REFERÊNCIA" agora é condicional: fotos reais mostram "STUDIO MAX" / "TATUAGEM REAL"; as 3 restantes (sessão P&B g1, oriental g5, flash g6) + piercing seguem como referência.
 - Proporção das fotos reais: aspect-[2/3] (crop leve, preserva a obra).
 
+## Galeria 100% real + endereço oculto (2026-10-20)
+- Cliente enviou 10 fotos reais; selecionadas as 7 mais variadas para a galeria (leão fine line, oriental nas costas, rosa old school, borboleta azul, lettering + árvore + espada). Arquivos real-leao/oriental/rosa/borboleta/lettering.jpg (+ -600), todos com real: true.
+- Layout final: 7 (4/3) + 5 (2/3) / 4+4+4 (2/3) / 6+6 (4/5). Estilos ORIENTAL atualizado com foto real.
+- "IMAGEM DE REFERÊNCIA" restante APENAS em COVER-UP e PIERCING na seção de estilos (sem fotos reais desses ainda).
+- ENDEREÇO REMOVIDO do site a pedido do cliente ("por agora"): módulo de localização (Rua das Pitangueiras + botão Maps) fora do ar; dados preservados no content.js/PRD para retorno fácil. Contato segue por WhatsApp + telefones.
+
 ## Foto real do artista (2026-10-10)
 - Seção do artista usa a FOTO REAL HD do Sérgio Pereira (941×1672) em /img/artist-sergio-2.jpg + variante -800 no srcSet (nomes novos para vencer cache de navegador; versões antigas removidas).
 - Foto exibida INTEIRA (proporção natural 9/16, h-auto, sem crop) a pedido do cliente — parallax removido desta seção; moldura deslocada e barra laranja mantidas.
