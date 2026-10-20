@@ -6,7 +6,7 @@ const img = (file) => `/img/${file}`;
 const wa = (number, text) => `https://wa.me/${number}?text=` + encodeURIComponent(text);
 
 export const LINKS = {
-  whatsapp: wa("556699711547", "Olá! Quero agendar uma sessão de tatuagem no Studio Max."),
+  whatsapp: wa("5566997111547", "Olá! Quero agendar uma sessão de tatuagem no Studio Max."),
   whatsappPiercing: wa("5566999881881", "Olá! Quero agendar um piercing no Studio Max."),
   maps:
     "https://www.google.com/maps/search/?api=1&query=" +
